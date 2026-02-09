@@ -139,6 +139,7 @@ input, select {
 
 <form method="POST" action="/save-lineup" onsubmit="return validateForm()">
 
+
 <!-- Candidate Details -->
 <div class="section">
 <h3>Candidate Details</h3>
@@ -288,8 +289,7 @@ input, select {
 </div>
 </div>
 
-<button type="button" class="submit-btn" onclick="goToSelected()">Submit & Next</button>
-
+<button type="submit" class="submit-btn">Save Interview Line-Up</button>
 </form>
 </div>
 <script>
@@ -358,17 +358,6 @@ window.onload = function() {
     document.getElementById("interviewDate").setAttribute("min", today);
 };
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var form = document.querySelector("form");
-
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        return false;
-    });
-});
-</script>
-
 
 </body>
 
