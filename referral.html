@@ -270,7 +270,7 @@ input, select {
 </div>
 </div>
 
-<button type="submit" class="submit-btn">Save Referral</button>
+<button type="button" class="submit-btn" onclick="goToLineup()">Save Referral</button>
 </form>
 </div>
 
@@ -379,6 +379,11 @@ function submitReferral(e) {
 }
 </script>
 
+<script>
+function goToLineup() {
+    window.location.href = "lineup.html";
+}
+</script>
 
 </body>
 
