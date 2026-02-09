@@ -137,8 +137,7 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form onsubmit="return submitAndNext();">
-
+<form method="POST" action="/save-lineup" onsubmit="return validateForm()">
 
 <!-- Candidate Details -->
 <div class="section">
@@ -289,7 +288,7 @@ input, select {
 </div>
 </div>
 
-<button type="submit">Submit & Next</button>
+<button type="button" onclick="goToSelected()">Submit & Next</button>
 </form>
 </div>
 <script>
@@ -359,18 +358,19 @@ window.onload = function() {
 };
 </script>
 <script>
-function submitAndNext() {
-
-    if (!validateForm()) {
-        return false;
-    }
-
-    alert("Lineup details saved (Demo Mode)");
-    window.location.href = "selected.html";
-
+// Stop the form from ever trying to call backend
+document.querySelector("form").onsubmit = function(e) {
+    e.preventDefault();
     return false;
+};
+
+function goToSelected() {
+    if (validateForm()) {
+        window.location.href = "selected.html";
+    }
 }
 </script>
+
 
 
 </body>
