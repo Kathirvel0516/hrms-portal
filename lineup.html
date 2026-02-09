@@ -137,7 +137,7 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form onsubmit="goToSelected(); return false;">
+<form method="POST" action="/save-lineup" novalidate>
 
 <!-- Candidate Details -->
 <div class="section">
@@ -290,6 +290,7 @@ input, select {
 
 <button type="button" class="submit-btn" onclick="goToSelected()">Save Interview Line-Up</button>
 
+
 </form>
 </div>
 <script>
@@ -363,6 +364,7 @@ function goToSelected() {
     window.location.href = "selected.html";
 }
 </script>
+
 
 
 </body>
