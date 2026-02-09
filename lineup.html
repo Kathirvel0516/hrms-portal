@@ -358,6 +358,17 @@ window.onload = function() {
     document.getElementById("interviewDate").setAttribute("min", today);
 };
 </script>
+<script>
+// Block form submit completely so it never calls backend
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector("form");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        return false;
+    });
+});
+</script>
 
 </body>
 
