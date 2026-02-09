@@ -137,7 +137,7 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form onsubmit="return false;">
+<form onsubmit="return submitAndNext();">
 
 <!-- Candidate Details -->
 <div class="section">
@@ -288,7 +288,7 @@ input, select {
 </div>
 </div>
 
-<button type="button" onclick="goToSelected()">Submit & Next</button>
+<button type="submit">Submit & Next</button>
 </form>
 </div>
 <script>
@@ -358,10 +358,19 @@ window.onload = function() {
 };
 </script>
 <script>
-function goToSelected() {
+function submitAndNext() {
+
+    if (!validateForm()) {
+        return false;
+    }
+
+    alert("Lineup details saved (Demo Mode)");
     window.location.href = "selected.html";
+
+    return false;
 }
 </script>
+
 
 </body>
 
