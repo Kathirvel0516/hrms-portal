@@ -137,8 +137,7 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form method="POST" action="/save-lineup" onsubmit="return validateForm()">
-
+<form onsubmit="return false;">
 
 <!-- Candidate Details -->
 <div class="section">
@@ -289,7 +288,7 @@ input, select {
 </div>
 </div>
 
-<button type="submit" class="submit-btn">Save Interview Line-Up</button>
+<button type="button" onclick="goToSelected()">Submit & Next</button>
 </form>
 </div>
 <script>
@@ -357,6 +356,11 @@ window.onload = function() {
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("interviewDate").setAttribute("min", today);
 };
+</script>
+<script>
+function goToSelected() {
+    window.location.href = "selected.html";
+}
 </script>
 
 </body>
