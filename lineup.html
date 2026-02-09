@@ -288,7 +288,8 @@ input, select {
 </div>
 </div>
 
-<button type="button" onclick="goToSelected()">Submit & Next</button>
+<button type="button" class="submit-btn" onclick="goToSelected()">Submit & Next</button>
+
 </form>
 </div>
 <script>
@@ -358,19 +359,15 @@ window.onload = function() {
 };
 </script>
 <script>
-// Stop the form from ever trying to call backend
-document.querySelector("form").onsubmit = function(e) {
-    e.preventDefault();
-    return false;
-};
+document.addEventListener("DOMContentLoaded", function() {
+    var form = document.querySelector("form");
 
-function goToSelected() {
-    if (validateForm()) {
-        window.location.href = "selected.html";
-    }
-}
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        return false;
+    });
+});
 </script>
-
 
 
 </body>
