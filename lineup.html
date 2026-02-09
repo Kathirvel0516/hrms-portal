@@ -137,7 +137,8 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form method="POST" action="/save-lineup" onsubmit="return validateForm()">
+<form onsubmit="return goToSelected()">
+
 
 
 <!-- Candidate Details -->
@@ -359,30 +360,18 @@ window.onload = function() {
 };
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+function goToSelected() {
 
-    var form = document.querySelector("form");
-
-    form.addEventListener("submit", function(e) {
-
-        // Run your existing validation first
-        if (!validateForm()) {
-            e.preventDefault();
-            return false;
-        }
-
-        // Stop actual form submission to backend
-        e.preventDefault();
-
-        // Redirect to next page
-        window.location.href = "selected.html";
-
+    if (!validateForm()) {
         return false;
-    });
+    }
 
-});
+    // No backend – direct navigation
+    window.location.href = "selected.html";
+
+    return false;
+}
 </script>
-
 
 </body>
 
