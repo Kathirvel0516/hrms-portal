@@ -137,9 +137,7 @@ input, select {
     <div class="counter"><h3>Onboarded</h3><p>3</p></div>
 </div>
 
-<form method="POST" action="/save-referral" onsubmit="return validateForm()">
-
-
+<form onsubmit="return validateForm()">
 
 <!-- Referral Details -->
 <div class="section">
@@ -270,7 +268,7 @@ input, select {
 </div>
 </div>
 
-<button type="button" class="submit-btn" onclick="goToLineup()">Save Referral</button>
+<button type="button" class="submit-btn" onclick="window.location.href='lineup.html'">Save Referral</button>
 </form>
 </div>
 
