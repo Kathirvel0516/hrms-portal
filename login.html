@@ -94,7 +94,7 @@ button:hover {
 <div class="login-box">
     <h2>HRMS Login</h2>
 
-    <form method="POST" action="/login">
+    <form onsubmit="loginUser(); return false;">
 
 
         <label>User ID *</label>
@@ -113,8 +113,7 @@ button:hover {
 
         <div id="loginError" class="error"></div>
 
-        <button type="button" onclick="loginUser()">Login</button>
-
+        <button type="submit">Login</button>
 
     </form>
 
