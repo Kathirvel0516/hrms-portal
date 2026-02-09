@@ -359,16 +359,30 @@ window.onload = function() {
 };
 </script>
 <script>
-// Block form submit completely so it never calls backend
 document.addEventListener("DOMContentLoaded", function() {
+
     var form = document.querySelector("form");
 
     form.addEventListener("submit", function(e) {
+
+        // Run your existing validation first
+        if (!validateForm()) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Stop actual form submission to backend
         e.preventDefault();
+
+        // Redirect to next page
+        window.location.href = "selected.html";
+
         return false;
     });
+
 });
 </script>
+
 
 </body>
 
